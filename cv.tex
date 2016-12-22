@@ -1,0 +1,170 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{orange}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Jared}{Roesch}
+\title{Curriculum vitae}                           % optional, remove / comment the line if not wanted
+\address{Paul G. Allen Center for Computer Science and Engineering Box 352350}{98195-2350 Seattle, WA}{USA} % optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(805)~405~5544}               % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{jroesch@cs.uw.edu}                               % optional, remove / comment the line if not wanted
+\homepage{homes.cs.washington.edu/~jroesch} % optional, remove / comment the line if not wanted
+\social[linkedin]{jaredroesch}                     % optional, remove / comment the line if not wanted
+\social[twitter]{roeschinc}                             % optional, remove / comment the line if not wanted
+\social[github]{jroesch}                              % optional, remove / comment the line if not wanted
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{me.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2015--Present}{PhD}{University of Washington}{Seattle, WA}{2nd Year}{}
+\cventry{2014--2015}{M.S}{University of California, Santa Barbara}{Santa Barbara, CA}{\textit{(Incomplete)}}{
+  I left UCSB without completing my thesis due to health problems \& pursuing a PhD at UW.}  % arguments 3 to 6 can be left empty
+\cventry{2010--2015}{B.S. Computer Science - College of Creative Studies}{University of California Santa Barbara}{Santa Barbara, CA}{}{}
+
+% \section{Master thesis}
+% \cvitem{title}{\emph{Title}}
+% \cvitem{supervisors}{Supervisors}
+% \cvitem{description}{Short thesis abstract}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+\section{Research Experience}
+
+\cventry{March 2014--Sept 2015}{Research Assistant}{Arch Lab @ UCSB}{City}{}{Worked under Professor Tim Sherwood on bringing ideas from Programming Language Theory
+to Computer Architecture. Recent projects have been centered around constructing a small
+trusted computing core.\newline{}%
+Detailed achievements:%
+\begin{itemize}%
+\item Achievement 1;
+\item Achievement 2, with sub-achievements:
+  \begin{itemize}%
+  \item Sub-achievement (a);
+  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+    \begin{itemize}
+    \item Sub-sub-achievement i;
+    \item Sub-sub-achievement ii;
+    \item Sub-sub-achievement iii;
+    \end{itemize}
+  \item Sub-achievement (c);
+  \end{itemize}
+\item Achievement 3.
+\end{itemize}}
+
+\cventry{July 2012--Present}{Research Assistant}{PL Lab @ UCSB}{City}{}{Worked under Professor Ben Hardekopf on multiple projects spanning, abstract interpretation,
+JavaScript optimization, the design of research languages for teaching static analysis
+and programming language theory, and logic guided program generation.\newline{}%
+Detailed achievements:%
+\begin{itemize}%
+\item Achievement 1;
+\item Achievement 2, with sub-achievements:
+  \begin{itemize}%
+  \item Sub-achievement (a);
+  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+    \begin{itemize}
+    \item Sub-sub-achievement i;
+    \item Sub-sub-achievement ii;
+    \item Sub-sub-achievement iii;
+    \end{itemize}
+  \item Sub-achievement (c);
+  \end{itemize}
+\item Achievement 3.
+\end{itemize}}
+
+\section{Industry Experience}
+
+\cventry{June 2015 - September 2015}{Research Assistant}{Mozilla Research}{Remote}{}{
+Worked on the Rust programming language's type system, and its implementation, my
+research was focused on improving type checking \& inference.\newline{}}
+
+% \cventry{June 2013 - September 2014}{Software Engineering Intern & Consultant}{Invoca Inc}{Santa Barbara}{}{
+% Delivered high-value telephony APIs, one project increased API performance by over 40x, using a highly concurrent,
+% distributed, in-memory solution. Led a port of the code base (roughly 300kloc) from Ruby 1.8.7 to Ruby 2.1.2. Helped build a
+% documentation tool for generating API docs from source code. Assisted with modularizing the application data layer to
+% support the evolution of a service oriented architecture.\newline{}}
+
+% \cventry{May 2011 - January 2013}{Software Developer}{Zentopy Inc}{Santa Barbara}{}{
+%   Architected the storage API layer, designed and implemented front-end UI/UX, ported the
+% native client from Windows to OS X and built a filesystem layer between the web services and
+% storage mechanisms.\newline{}%
+
+% Detailed achievements:
+% \begin{itemize}
+% \item Architected the storage and authentication APIs;
+% \item Designed and implemented the front-end UI/UX;
+% \item Ported the native client from Windows to OS X;
+% \item Constructed a filesystem layer between the web services and storage mechanisms;
+% \end{itemize}
+% }
+
+\section{Teaching}
+\cventry{January 2014--June 2014}{Reader for Programming Languages (CMPSC 162)}{UCSB}{City}{}{Assisted in grading, and designing curriculum for the the undergraduate Programming Languages class at UCSB.\newline{}}
+
+\section{Service}
+\subsection{Journals}
+\cventry{2015-2015}{Journal Reviewer}{ACM TACO}{}{}{Reviewed papers for ACM TACO.}
+
+\section{Interests}
+\cvitem{hobby 1}{Description}
+\cvitem{hobby 2}{Description}
+\cvitem{hobby 3}{Description}
+
+% Publications from a BibTeX file using the multibib package
+% \section{Conference Publications}
+% \bibliographybook{cv_publications}
+
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+\end{document}
+
+
+%% end of file `template.tex'.
