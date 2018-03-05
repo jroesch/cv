@@ -1,5 +1,31 @@
 \usepackage{color}
-\usepackage[hidelinks]{hyperref}
+% \usepackage[hidelinks]{hyperref}
+
+% Borrowed from: https://tex.stackexchange.com/questions/34881/references-section-in-a-cv
+
+% Define \cvdoublecolumn, which sets its arguments in two columns without any labels
+\newcommand{\cvdoublecolumn}[2]{%
+\cvitem[0.75em]{}{%
+  \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+  }%
+}
+
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{%
+  \textbf{#1}\newline% Name
+  \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+  \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+  \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+  \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+  \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+  \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
 \newcommand{\makered}[1]{\textcolor{red}{#1}}
 \newcommand{\redbold}[1]{\makered{\textbf{#1}}}

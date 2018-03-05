@@ -14,6 +14,31 @@
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
+% Define \cvdoublecolumn, which sets its arguments in two columns without any labels
+
+\newcommand{\cvdoublecolumn}[2]{%
+\cvitem[0.75em]{}{%
+  \begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}%
+  }%
+}
+
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{%
+  \textbf{#1}\newline% Name
+  \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+  \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+  \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+  \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+  \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+  \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
 % character encoding
 %\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
@@ -55,7 +80,7 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2015--Present}{PhD}{University of Washington}{Seattle, WA}{2nd Year}{}
+\cventry{2015--Present}{PhD}{University of Washington}{Seattle, WA}{3rd Year}{}
 \cventry{2014--2015}{M.S}{University of California, Santa Barbara}{Santa Barbara, CA}{\textit{(Incomplete)}}{
   I left UCSB without completing my thesis due to health problems \& pursuing a PhD at UW.}  % arguments 3 to 6 can be left empty
 \cventry{2010--2015}{B.S. Computer Science - College of Creative Studies}{University of California Santa Barbara}{Santa Barbara, CA}{}{}
@@ -74,8 +99,16 @@
 
 \section{Research Experience}
 
+\cventry{July 2017 - October 2017}{Research Intern}{Microsoft Research Redmond}{}{}{
+  Working with Leonardo De Moura and Nikhil Swamy on verifying and compiling
+  an efficient implementation of the TLS protoccol as part of Project Everest.\newline{}}
+
+\cventry{March 2017 - June 2017}{Research Intern}{Microsoft Research Redmond}{}{}{
+ Working with Leonardo De Moura and Tahina Ramananandro on an experimental Lean backend for
+ the F* verification language.\newline{}}
+
 \cventry{September 2015 - Present}{Research Assistant}{PLSE at UW}{}{}{Working under Professor Zachary Tatlock on
-verification, programming langauges, and systems building.\newline{}}
+verification, programming languages, and systems building.\newline{}}
 
 \cventry{March 2014--September 2015}{Research Assistant}{Arch Lab at UCSB}{}{}{Worked under Professor Tim Sherwood on
 applying ideas from Programming Languages to Computer Architecture. Our main project was centered around
@@ -100,12 +133,11 @@ In particular:%
 \section{Industry Experience}
 
 \cventry{June 2015 - September 2015}{Research Assistant}{Mozilla Research}{Remote}{}{
-Worked on the Rust programming language's type system, and its implementation, my
-research was focused on improving type checking \& inference.\newline{}}
+Worked on the Rust programming language's type system, and its implementation. My
+research was focused on extending and improving type checking \& inference.\newline{}}
 
 \cventry{June 2013 - September 2014}{Software Engineering Intern \& Consultant}{Invoca Inc}{Santa Barbara}{}{
-Delivered high-value
-telephony APIs, one project increased API performance by over 40x, using a highly concurrent, distributed, in-memory solution.
+Delivered high-value telephony APIs, one project increased API performance by over 40x, using a highly concurrent, distributed, in-memory solution.
 Led a port of the code base (roughly 300kloc) from Ruby 1.8.7 to Ruby 2.1.2. Helped build a
 documentation tool for generating API docs from source code. Assisted with modularizing the application data layer to
 support the evolution of a service oriented architecture.\newline{}}
@@ -137,7 +169,46 @@ support the evolution of a service oriented architecture.\newline{}}
 \subsection{Journals}
 \cventry{2015-2015}{Journal Reviewer}{ACM TACO}{}{}{Reviewed papers for ACM TACO.}
 
-\section{Talks}
+\section{Invited Talks}
+\cventry{September 2017}{White Box Automation}{ITP '17}{}{}{
+  An invited talk about Lean presented by Leo De Moura at ITP '17.
+  % \url{http://itp2017.cic.unb.br/#is}
+}
+
+\cventry{January 2017}{Lean Tutorial}{POPL '17}{}{}{
+  An invited tutorial on the Lean theorem prover, co-presented with Leo De Moura.
+}
+
+\section{References}
+
+\cvdoublecolumn{
+  \cvreference{Zachary Tatlock}
+    {Paul G. Allen School of Computer Science \& Engineering}
+    {University of Washington}
+    {185 E Stevens Way NE}
+    {Seattle, WA 98195}
+    {ztatlock@cs.washington.edu}
+    {}}
+  {\cvreference{Leonardo De Moura}
+    {Microsoft Research}
+    { Building 99 }
+    { 14820 NE 36th St}
+    { Redmond, WA 98052 }
+    { leonardo@microsoft.com }
+    {}}
+  \cvdoublecolumn{\cvreference{Nikhil Swamy}
+    { Microsoft Research }
+    { Building 99 }
+    { 14820 NE 36th St}
+    { Redmond, WA 98052 }
+    { nswamy@microsoft.com }
+    {}}{\cvreference{Tom Ball}
+    { Microsoft Research }
+    { Building 99 }
+    { 14820 NE 36th St}
+    { Redmond, WA 98052 }
+    { tball@microsoft.com }
+    { 1-(425)-703-8591 }}
 
 % \section{Interests}
 % \cvitem{hobby 1}{Description}
