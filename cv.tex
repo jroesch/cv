@@ -39,7 +39,7 @@
   \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
   \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
-\usepackage[sorting=ddatent, style=numeric]{biblatex}
+\usepackage[sorting=ddatent, style=numeric, maxbibnames=99]{biblatex}
 \DeclareSortingScheme{ddatent}{
   \sort{
     \field{presort}
@@ -77,6 +77,17 @@
     \field{title}
   }
 }
+
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
 
 \addbibresource{publications.bib}
 
@@ -122,8 +133,6 @@
 
 \section{Education}
 \cventry{2015--Present}{PhD}{University of Washington}{Seattle, WA}{3rd Year}{}
-\cventry{2014--2015}{M.S}{University of California, Santa Barbara}{Santa Barbara, CA}{\textit{(Incomplete)}}{
-  I left UCSB without completing my thesis due to health problems \& pursuing a PhD at UW.}  % arguments 3 to 6 can be left empty
 \cventry{2010--2015}{B.S. Computer Science - College of Creative Studies}{University of California Santa Barbara}{Santa Barbara, CA}{}{}
 
 % \section{Master thesis}
