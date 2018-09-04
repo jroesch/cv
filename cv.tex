@@ -39,6 +39,47 @@
   \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
   \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
+\usepackage[sorting=ddatent, style=numeric]{biblatex}
+\DeclareSortingScheme{ddatent}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field[strside=left,strwidth=4]{sortyear}
+    \field[strside=left,strwidth=4]{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+    \field[padside=left,padwidth=2,padchar=0]{month}
+    \literal{00}
+  }
+  \sort[direction=descending]{
+    \field[padside=left,padwidth=2,padchar=0]{day}
+    \literal{00}
+  }
+  \sort[direction=descending]{
+    \field[padside=left,padwidth=4,padchar=0]{volume}
+    \literal{9999}
+  }
+  \sort{
+    \name{sortname}
+    \name{author}
+    \name{editor}
+    \name{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+}
+
+\addbibresource{publications.bib}
+
 % character encoding
 %\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
@@ -94,8 +135,7 @@
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
 \nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+\printbibliography[title=Publications]
 
 \section{Research Experience}
 
@@ -174,8 +214,7 @@ support the evolution of a service oriented architecture.\newline{}}
 \cventry{2015-2015}{Journal Reviewer}{ACM TACO}{}{}{Reviewed papers for ACM TACO.}
 
 \section{Awards}
-\cventry{2018}{IEEE Micro Top Pick}{}{}{An Architecture for Analysis, a culmination
-of the project I started with my collaborators Joseph McMahan and Tim Sherwood while at UCSB.}
+\cventry{2018}{IEEE Micro Top Pick}{An Architecture for Analysis}{}{}{}{A culmination of the project I started with my collaborators Joseph McMahan and Tim Sherwood while at UCSB.}
 
 \section{Invited Talks}
 \cventry{September 2017}{White Box Automation}{ITP '17}{}{}{
