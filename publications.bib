@@ -179,3 +179,100 @@ keywords = {CS2, program visualization, CS1, operational semantics, abstract mac
 location = {Athens, Greece},
 series = {SPLASH-E 2019}
 }
+
+@article{Vega2020LastLayerTH,
+  title={LastLayer: Toward Hardware and Software Continuous Integration},
+  author={Luis Vega and Jared Roesch and Joseph McMahan and Luis Ceze},
+  journal={IEEE Micro},
+  year={2020},
+  volume={40},
+  pages={103-111},
+  url={https://api.semanticscholar.org/CorpusID:218683938}
+}
+
+@inproceedings{DBLP:conf/iclr/KirisameLHBHRCT21,
+  author       = {Marisa Kirisame and
+                  Steven Lyubomirsky and
+                  Altan Haan and
+                  Jennifer Brennan and
+                  Mike He and
+                  Jared Roesch and
+                  Tianqi Chen and
+                  Zachary Tatlock},
+  title        = {Dynamic Tensor Rematerialization},
+  booktitle    = {9th International Conference on Learning Representations, {ICLR} 2021,
+                  Virtual Event, Austria, May 3-7, 2021},
+  publisher    = {OpenReview.net},
+  year         = {2021},
+  url          = {https://openreview.net/forum?id=Vfs\_2RnOD0H},
+  timestamp    = {Sat, 17 Dec 2022 01:15:29 +0100},
+  biburl       = {https://dblp.org/rec/conf/iclr/KirisameLHBHRCT21.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{CHRISTENSEN202139,
+title = {Safe functional systems through integrity types and verified assembly},
+journal = {Theoretical Computer Science},
+volume = {851},
+pages = {39-61},
+year = {2021},
+issn = {0304-3975},
+doi = {https://doi.org/10.1016/j.tcs.2020.09.039},
+url = {https://www.sciencedirect.com/science/article/pii/S0304397520305508},
+author = {Michael Christensen and Joseph McMahan and Lawton Nichols and Jared Roesch and Timothy Sherwood and Ben Hardekopf},
+keywords = {Formal methods, Computer architecture, Functional programming, Binary analysis},
+abstract = {Building a trustworthy life-critical embedded system requires deep reasoning about the potential effects that sequences of machine instructions can have on full system operation. Rather than trying to analyze complete binaries and the countless ways their instructions can interact with one another — memory, side effects, control registers, implicit state, etc. — we explore a new approach. We propose an architecture controlled by a thin computational layer designed to tightly correspond with the lambda calculus, drawing on principles of functional programming to bring the assembly much closer to myriad reasoning frameworks, such as the Coq proof assistant. This approach allows assembly-level verified versions of critical code to operate safely in tandem with arbitrary code, including imperative and unverified system components, without the need for large supporting trusted computing bases. We demonstrate that this computational layer can be built in such a way as to simultaneously provide full programmability and compact, precise, and complete semantics, while still using hardware resources comparable to normal embedded systems. To demonstrate the practicality of this approach, our FPGA-implemented prototype runs an embedded medical application which monitors and treats life-threatening arrhythmias. Though the system integrates untrusted and imperative components, our architecture allows for the formal verification of multiple properties of the end-to-end system. We present a proof of correctness of the assembly-level implementation of the core algorithm in Coq, the integrity of trusted data via a non-interference proof, and a guarantee that our prototype meets critical timing requirements.}
+}
+
+@article{DBLP:journals/corr/abs-2006-03031,
+  author       = {Haichen Shen and
+                  Jared Roesch and
+                  Zhi Chen and
+                  Wei Chen and
+                  Yong Wu and
+                  Mu Li and
+                  Vin Sharma and
+                  Zachary Tatlock and
+                  Yida Wang},
+  title        = {Nimble: Efficiently Compiling Dynamic Neural Networks for Model Inference},
+  journal      = {CoRR},
+  volume       = {abs/2006.03031},
+  year         = {2020},
+  url          = {https://arxiv.org/abs/2006.03031},
+  eprinttype    = {arXiv},
+  eprint       = {2006.03031},
+  timestamp    = {Tue, 07 Nov 2023 15:17:51 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2006-03031.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DBLP:journals/corr/abs-2105-03215,
+  author       = {Zhi Chen and
+                  Cody Hao Yu and
+                  Trevor Morris and
+                  Jorn Tuyls and
+                  Yi{-}Hsiang Lai and
+                  Jared Roesch and
+                  Elliott Delaye and
+                  Vin Sharma and
+                  Yida Wang},
+  title        = {Bring Your Own Codegen to Deep Learning Compiler},
+  journal      = {CoRR},
+  volume       = {abs/2105.03215},
+  year         = {2021},
+  url          = {https://arxiv.org/abs/2105.03215},
+  eprinttype    = {arXiv},
+  eprint       = {2105.03215},
+  timestamp    = {Tue, 07 Nov 2023 15:17:51 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2105-03215.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{lai2023relax,
+      title={Relax: Composable Abstractions for End-to-End Dynamic Machine Learning}, 
+      author={Ruihang Lai and Junru Shao and Siyuan Feng and Steven S. Lyubomirsky and Bohan Hou and Wuwei Lin and Zihao Ye and Hongyi Jin and Yuchen Jin and Jiawei Liu and Lesheng Jin and Yaxing Cai and Ziheng Jiang and Yong Wu and Sunghyun Park and Prakalp Srivastava and Jared G. Roesch and Todd C. Mowry and Tianqi Chen},
+      year={2023},
+      eprint={2311.02103},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
